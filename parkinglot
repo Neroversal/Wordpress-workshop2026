@@ -1,0 +1,35 @@
+sudo apt update && sudo apt full-upgrade -y
+sudo apt install ssh
+sudo nano /etc/ssh/sshd_config
+sudo service ssh restart
+
+sudo apt update
+sudo apt install apache2
+
+sudo apt install mysql-server
+sudo mysql_secure_installation
+
+sudo apt install php libapache2-mod-php php-mysql
+sudo systemctl restart apache2
+
+sudo mysql
+CREATE DATABASE wordpress;
+CREATE USER 'wordpressuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpressuser'@'localhost';
+FLUSH PRIVILEGES;
+exit
+
+cd /tmp
+curl -LO https://wordpress.org/latest.tar.gz
+tar -tzf latest.tar.gz | head
+tar xzvf latest.tar.gz
+
+cd /tmp/wordpress
+cp /tmp/wordpress/wp-config-sample.php /tmp/wordpress/wp-config.php
+nano wp-config.php
+
+sudo rsync -avP /tmp/wordpress/ /var/www/html/
+cd /var/www/html
+sudo chown -R www-data:www-data /var/www/html/
+sudo chmod -R 755 /var/www/html/
+sudo rm /var/www/html/index.html
