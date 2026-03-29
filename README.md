@@ -229,4 +229,6 @@ others = 5 = read, execute
     
 <img width="363" height="330" alt="Screenshot 2026-03-27 at 11 46 41 PM" src="https://github.com/user-attachments/assets/764fc968-7fb3-4a59-8df9-a2e1b68bf19d" />
 
+###### Video Youtube Step by Step guide#####
 
+https://youtu.be/NI_XZAp1tPo?si=zV_Bc7eTUHffj_eh 
